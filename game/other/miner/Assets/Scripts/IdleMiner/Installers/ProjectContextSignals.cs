@@ -1,3 +1,0 @@
-﻿namespace PG.IdleMiner.Installers
-{
-}
