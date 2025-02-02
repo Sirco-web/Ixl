@@ -4,3 +4,13 @@
     "surge": "^0.24.6"
   }
 }
+
+"git": {
+  "scripts": {
+    "post-commit": "npm run deploy",
+    "pre-push": "npm run deploy"
+  }
+},
+"scripts": {
+  "deploy": "surge --project ./ --domain my-project.surge.sh"
+}
