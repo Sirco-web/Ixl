@@ -2,15 +2,14 @@
   "devDependencies": {
     "git-scripts": "^0.6.4",
     "surge": "^0.24.6"
-  }
-}
-
-"git": {
+  },
+  "git": {
+    "scripts": {
+      "post-commit": "npm run deploy",
+      "pre-push": "npm run deploy"
+    }
+  },
   "scripts": {
-    "post-commit": "npm run deploy",
-    "pre-push": "npm run deploy"
+    "deploy": "surge --project ./ --domain my-project.surge.sh"
   }
-},
-"scripts": {
-  "deploy": "surge --project ./ --domain my-project.surge.sh"
 }
