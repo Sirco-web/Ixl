@@ -10,6 +10,6 @@
     }
   },
   "scripts": {
-    "deploy": "surge --project ./ --domain my-project.surge.sh"
+    "deploy": "surge --project ./ --domain totally.surge.sh"
   }
 }
