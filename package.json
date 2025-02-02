@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "git-scripts": "^0.6.4",
+    "surge": "^0.24.6"
+  }
+}
