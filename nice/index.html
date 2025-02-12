@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCKED WEBSITE PAGE</title>
+    <!-- Local Favicons -->
+    <link rel="apple-touch-icon" href="favicon-180x180.png" sizes="180x180">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon-16x16.ico">
+
+    <style>
+        body {
+            font-size: 24px; /* Make the text large */
+            padding: 20px; /* Increase padding */
+            margin: 50px; /* Center the content */
+        }
+    </style>
+    <script>
+        let urls = [
+            'nice.jpg'
+        ];
+        let numberOfPopups = 30; // Number of pop-ups to open
+        let index = 0;
+
+        function openNextPopup() {
+            if (numberOfPopups > 0) {
+                let popup = window.open('', '_blank', 'width=600,height=600');
+                popup.document.write(`
+                    <html>
+                    <head><title>Popup</title></head>
+                    <body>
+                        <p>This popup will move around! Click me to open more pop-ups.</p>
+                        <iframe src="${urls[index]}" width="100%" height="100%"></iframe>
+                        <script>
+                            document.addEventListener('click', function() {
+                                opener.openNextPopup();
+                            });
+                            function movePopup() {
+                                setInterval(function() {
+                                    let x = Math.random() * (screen.width - 600);
+                                    let y = Math.random() * (screen.height - 400);
+                                    window.moveTo(x, y);
+                                }, 100); // Move very fast (every 100 milliseconds)
+                            }
+                            movePopup();
+                        <\/script>
+                    </body>
+                    </html>
+                `);
+                popup.document.close(); // Ensure the document is complete
+                index = (index + 1) % urls.length;
+                numberOfPopups--;
+            }
+        }
+
+        document.addEventListener('click', function() {
+            openNextPopup();
+        });
+    </script>
+</head>
+<body>
+    <h1>Totally blocked</h1>
+    <p>Click anywhere on this page to open about:blank page to an unblocked games website but you have to click it multiple times to open so blocking bots can't find us out. *ps you need to click very fast like 35 times.</p>
+</body>
+</html>
