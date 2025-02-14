@@ -7,10 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://images.unsplash.com/photo-1518373714866-3f1478910a6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background: url('space.png') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             text-align: center;
+            height: 100vh; /* Ensure the background covers the full height */
         }
         h1 {
             margin-top: 20px;
@@ -44,16 +45,29 @@
     </style>
 </head>
 <body>
-    <h1>Game Links</h1>
-    <ul class="game-list" id="gameList">
-        <li class="game-item">
-            <span>Game 1: <a href="http://example.com/game1" target="_blank">http://example.com/game1</a></span>
-            <button class="copy-btn" onclick="copyToClipboard('http://example.com/game1', this)">Copy</button>
-        </li>
-        <!-- Add more game items here -->
-    </ul>
+    <h1>Game SITES!</h1>
+    <ul class="game-list" id="gameList"></ul>
 
     <script>
+        const games = [
+			{ name: "UBG365", url: "https://ubg365unblocked.com" },
+			{ name: "MAXY PRO", url: " https://sites.google.com/view/maxypro-ubg/home " },
+			{ name: "UB 67", url: " https://sites.google.com/site/unblockedgame67/home" },
+			{ name: "UBG S3", url: "https://unblocked-games.s3.amazonaws.com/index.html" },
+            // Add more games here
+        ];
+
+        function addGameLink(name, url) {
+            const gameList = document.getElementById("gameList");
+            const gameItem = document.createElement("li");
+            gameItem.className = "game-item";
+            gameItem.innerHTML = `
+                <span>${name}: <a href="${url}" target="_blank">${url}</a></span>
+                <button class="copy-btn" onclick="copyToClipboard('${url}', this)">Copy</button>
+            `;
+            gameList.appendChild(gameItem);
+        }
+
         function copyToClipboard(text, button) {
             navigator.clipboard.writeText(text).then(function() {
                 button.textContent = 'Copied!';
@@ -64,6 +78,9 @@
                 console.error('Could not copy text: ', err);
             });
         }
+
+        // Add all games to the list
+        games.forEach(game => addGameLink(game.name, game.url));
     </script>
 </body>
 </html>
