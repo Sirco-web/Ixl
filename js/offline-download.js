@@ -20,11 +20,20 @@ function cacheResources() {
     ];
 
     caches.open('offline-cache-v1').then(cache => {
-        cache.addAll(urlsToCache).then(() => {
-            document.getElementById('progress-bar').style.width = '100%';
+        let promises = urlsToCache.map((url, index) => 
+            cache.add(url).then(() => {
+                updateProgressBar((index + 1) / urlsToCache.length);
+            }).catch(err => console.error(`Failed to cache ${url}:`, err))
+        );
+        Promise.all(promises).then(() => {
             alert('Content downloaded for offline use!');
         }).catch(err => {
             console.error('Failed to cache resources:', err);
         });
     });
+}
+
+function updateProgressBar(progress) {
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${progress * 100}%`;
 }
