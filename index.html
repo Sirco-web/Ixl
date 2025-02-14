@@ -11,13 +11,102 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/boxicons.min.css">
     <link rel="stylesheet" href="fonts/poppins.css">
+    <style>
+        body {
+            display: flex;
+        }
+        .sidebar {
+            width: 120px; /* Thinner sidebar */
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #f0f0f0;
+            padding: 10px; /* Reduced padding */
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar a {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        .content {
+            margin-left: 140px; /* Adjusted to account for sidebar width + padding */
+            padding: 20px;
+        }
+        #popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 640px;
+            height: 480px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        #popup-form iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #popup-background {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            const form = document.getElementById('popup-form');
+            const background = document.getElementById('popup-background');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                background.style.display = 'block';
+            } else {
+                form.style.display = 'none';
+                background.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 
 <body>
+    <div class="sidebar">
+        <a href="#trending">🔥 Trending</a>
+        <a href="#games">🎮 Games</a>
+        <a href="#form" onclick="toggleForm()">📝 Form</a>
+        <a href="#discord">💬 Discord</a>
+    </div>
+
     <!-- Remove external freevisitorcounters scripts to avoid loading issues -->
     <!-- <a href='http://www.freevisitorcounters.com'>.</a> 
     <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=6dff99187605e7a0937a37f29cf281b844b04dbe'></script>
     <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1293306/t/1"></script> -->
+
+    <div id="popup-background" onclick="toggleForm()"></div>
+    <div id="popup-form">
+        <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__VD4IRRURVpVUzVIOEhRNFJPNEZQWDU1MEc5MzRBSy4u&embed=true" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
+    </div>
 
     <div class="container">
 
@@ -36,6 +125,9 @@
                 </a>
                 <a href="game/eaglercraft/eaglercraft.html">
                     <img src="img/eagler.png" class="gameThumb">
+                </a>
+                <a href="game/theimpossiblequiz/index.html">
+                    <img src="img/theimpossiblequiz.png" class="gameThumb">
                 </a>
             </div>
 
@@ -143,12 +235,8 @@
             </div>
 
             <div id="discord">
+                <p>If you are offline load the website with the wifi and immediately while loading switch to working wifi and go down to discord frame right click and click reload frame to chat!</p>
                 <widgetbot server="1335294377202810881" channel="1335294377995796613" width="90%" height="600px"></widgetbot>
+				<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
             </div>
 
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-</body>
-
-</html>
