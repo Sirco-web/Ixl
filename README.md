@@ -6,4 +6,4 @@ just stuff for owner
 
 python3 -m http.server 3000
 
-./keep_alive.sh
+./keep.sh
