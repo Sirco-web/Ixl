@@ -1,0 +1,7 @@
+Updates
+
+3.50 2/15/25
+added updates
+added eaglymc js 1.20 U6
+added eaglymc wasm-gc 1.20 U6
+updated gui for home page
