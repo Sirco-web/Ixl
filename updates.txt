@@ -1,5 +1,14 @@
 Updates
 
+3.52 2/25/25
+updated eaglercraft
+updated eaglercraft wasm-gc
+added startlike client
+
+Comments!
+we added startlike it is a better ver of eaglercraft wasm-gc with more blockes and it is just better in lots of ways to get to it type in /games/startlike/startlike.html
+we have not added it to the games area for now but we will in the next update!
+
 3.51 2/15/25
 added draw
 
