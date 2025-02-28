@@ -4,6 +4,14 @@ html, body {
     overflow: auto; /* Ensure scrollbars are shown */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
 
 .container {
     display: flex;
@@ -139,12 +147,4 @@ html, body {
 
 #discord {
     text-align: center;
-}
-
-.centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
 }
