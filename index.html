@@ -14,9 +14,13 @@
     <style>
         body {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
         .sidebar {
-            width: 120px; /* Thinner sidebar */
+            width: 100px; /* Thinner sidebar */
             position: fixed;
             top: 0;
             left: 0;
@@ -42,8 +46,10 @@
             background-color: #ddd;
         }
         .content {
-            margin-left: 140px; /* Adjusted to account for sidebar width + padding */
+            margin-left: 120px; /* Adjusted to account for sidebar width + padding */
             padding: 20px;
+            max-width: 1200px;
+            width: 100%;
         }
         #popup-form, #popup-updates {
             display: none;
@@ -111,11 +117,6 @@
         <a href="#discord">💬 Discord</a>
     </div>
 
-    <!-- Remove external freevisitorcounters scripts to avoid loading issues -->
-    <!-- <a href='http://www.freevisitorcounters.com'>.</a> 
-    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=6dff99187605e7a0937a37f29cf281b844b04dbe'></script>
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1293306/t/1"></script> -->
-
     <div id="popup-background" onclick="toggleForm(); toggleUpdates();"></div>
     <div id="popup-form">
         <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__VD4IRRURVpVUzVIOEhRNFJPNEZQWDU1MEc5MzRBSy4u&embed=true" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
@@ -125,14 +126,13 @@
     </div>
 
     <div class="container">
-
-        <div class="content">
+        <div class="content centered">
             <div id="home">
-                <h1>Totally v10</h1>
-                <h2>V3.51</h2>
+                <h1>Totally a website</h1>
+                <h2>V3.53</h2>
                 <p>The best fun website</p>
                 <img src="img/games.png">
-				</div>
+            </div>
 
             <div id="trending">
                 <p><u>Trending</u></p>
@@ -155,11 +155,17 @@
                 <a href="game/slope/index.html">
                     <img src="img/slope.png" class="gameThumb">
                 </a>
+                <a href="game/mcstart/index.html">
+                    <img src="img/mcstart.png" class="gameThumb">
+                </a>
                 <a href="game/eaglymc/eaglymc.html">
                     <img src="img/eaglymc.jpg" class="gameThumb">
                 </a>
                 <a href="game/eaglymc_gc/eaglymc_gc.html">
                     <img src="img/eaglymc_gc.png" class="gameThumb">
+                </a>
+                <a href="game/starlike/starlike.html">
+                    <img src="img/starlike.png" class="gameThumb">
                 </a>
                 <a href="game/eaglercraft/eaglercraft.html">
                     <img src="img/eagler.png" class="gameThumb">
@@ -262,6 +268,10 @@
             <div id="discord">
                 <p>If you are offline load the website with the wifi and immediately while loading switch to working wifi and go down to discord frame right click and click reload frame to chat!</p>
                 <widgetbot server="1335294377202810881" channel="1335294377995796613" width="90%" height="600px"></widgetbot>
-				<script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
             </div>
 
+        </div>
+    </div>
+</body>
+</html>

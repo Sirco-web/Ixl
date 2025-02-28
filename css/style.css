@@ -1,144 +1,152 @@
 html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-	margin: 0;
-	overflow-x: hidden;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar {
-	position: fixed;
-	width: 30px;
-	height: 100%;
-	background: #f9f9f9;
-	padding: 20px;
+    position: fixed;
+    width: 30px;
+    height: 100%;
+    background: #f9f9f9;
+    padding: 20px;
 }
 
 .navbar nav {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 50%;
-	transform: translate(0%, -50%);
-	font-size: 30px;
-	line-height: 50px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    font-size: 30px;
+    line-height: 50px;
 }
 
 .navbar nav a {
-	text-shadow: 0px 0px 3px currentcolor;
-	text-decoration: none;
-	transition: 300ms ease-in-out;
+    text-shadow: 0px 0px 3px currentcolor;
+    text-decoration: none;
+    transition: 300ms ease-in-out;
 }
 
 .navbar nav a:hover {
-	transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 #nav-home {
-	color: #708090;
+    color: #708090;
 }
 
 #nav-game {
-	color: #fdff00;
+    color: #fdff00;
 }
 
 #nav-discord {
-	color: #7289da;
+    color: #7289da;
 }
 
 #nav-trending {
-	color: #ffa500;
+    color: #ffa500;
 }
 
 .content {
-	position: absolute;
-	left: 70px;
-	top: 0;
-	width: 90vw;
+    position: absolute;
+    left: 70px;
+    top: 0;
+    width: 90vw;
 }
 
 #home,
 #games,
 #trending {
-	width: 100%;
-	font-family: "Poppins", sans-serif;
-	margin: 0 auto;
-	text-align: center;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #games a,
 #trending a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #home h1 {
-	font-size: 60px;
-	margin: -2px;
-	letter-spacing: -3px;
+    font-size: 60px;
+    margin: -2px;
+    letter-spacing: -3px;
 }
 
 .proxyImg {
-	width: 120px;
-	border-radius: 10px;
-	transition: 200ms ease-in-out;
-	cursor: pointer;
-	margin: 5px;
+    width: 120px;
+    border-radius: 10px;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .proxyImg:hover {
-	transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 *::-webkit-scrollbar {
-	height: 10px;
-	width: 10px;
+    height: 10px;
+    width: 10px;
 }
 *::-webkit-scrollbar-track {
-	border-radius: 5px;
-	background-color: #ebebeb;
+    border-radius: 5px;
+    background-color: #ebebeb;
 }
 
 *::-webkit-scrollbar-track:hover {
-	background-color: #ebebeb;
+    background-color: #ebebeb;
 }
 
 *::-webkit-scrollbar-track:active {
-	background-color: #ebebeb;
+    background-color: #ebebeb;
 }
 
 *::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-color: #708090;
+    border-radius: 10px;
+    background-color: #708090;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	background-color: #708090;
+    background-color: #708090;
 }
 
 *::-webkit-scrollbar-thumb:active {
-	background-color: #708090;
+    background-color: #708090;
 }
 
 .gameThumb {
-	width: 100px;
-	height: 123px;
-	border-radius: 10px;
-	text-decoration: none;
-	margin: 10px;
-	transition: 200ms ease-in-out;
-	object-fit: cover;
+    width: 100px;
+    height: 123px;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 10px;
+    transition: 200ms ease-in-out;
+    object-fit: cover;
 }
 
 .gameThumb:hover {
-	transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 #discord {
-	text-align: center;
+    text-align: center;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
 }
