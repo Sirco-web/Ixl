@@ -1,11 +1,9 @@
-html {
-    scroll-behavior: smooth;
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: auto; /* Ensure scrollbars are shown */
 }
 
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
 
 .container {
     display: flex;
