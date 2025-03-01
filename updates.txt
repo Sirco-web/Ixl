@@ -1,22 +1,30 @@
 Updates
 
+3.53 and 3.54 2/28/25-3/1/25
+
+Removed download website feacher because did not work.
+Added startlike to games page.
+Added Minecraft Quick Guide to games page.
+Fixed startlike to not say that this is a downloaded ver and to use online ver. Plus, removed join discord button.
+
 3.52 2/25/25
-updated eaglercraft
-updated eaglercraft wasm-gc
-added startlike client
+
+Updated eaglercraft
+Updated eaglercraft wasm-gc
+Added startlike client
 
 Comments!
 we added startlike it is a better ver of eaglercraft wasm-gc with more blockes and it is just better in lots of ways to get to it type in /games/startlike/startlike.html
 we have not added it to the games area for now but we will in the next update!
 
 3.51 2/15/25
-added draw
+Added draw
 
 3.50 2/15/25
-added updates
-added eaglymc js 1.20 U6
-added eaglymc wasm-gc 1.20 U6
-updated gui for home page
+Added updates
+Added eaglymc js 1.20 U6
+Updated eaglymc wasm-gc 1.20 U6
+Updated gui for home page
 
 Comments!
 
