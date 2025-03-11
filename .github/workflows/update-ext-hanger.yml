@@ -1,0 +1,38 @@
+name: Update Ext Hanger
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch:
+
+jobs:
+  update-ext-hanger:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Ixl-maybe repository
+      uses: actions/checkout@v2
+      with:
+        repository: Timco307/Ixl-maybe
+        path: Ixl-maybe
+
+    - name: Checkout Ext-hanger repository
+      uses: actions/checkout@v2
+      with:
+        repository: Timco307/Ext-hanger
+        path: Ext-hanger
+
+    - name: Sync Ext-hanger to game folder
+      run: |
+        rsync -a --delete Ext-hanger/ Ixl-maybe/game/ext/
+
+    - name: Commit and push changes
+      run: |
+        cd Ixl-maybe
+        git config --global user.email "timco307@gmail.com"
+        git config --global user.name "Timco307"
+        git add game/ext
+        git commit -m "Update Ext-hanger content"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
