@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXL | Dashboard</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        const correctPassword = 'LS7';
+
+        function checkPassword() {
+            const password = prompt('Enter the password:');
+            return password === correctPassword;
+        }
+
+        function openNewTab() {
+            if (!checkPassword()) {
+                alert('Incorrect password.');
+                return;
+            }
+
+            const newTab = window.open('about:blank', '_blank');
+            if (!newTab) {
+                alert("Please enable popups to proceed.");
+                return;
+            }
+
+            const siteTitle = localStorage.getItem('siteTitle') || "IXL | Dashboard";
+            const siteLogo = localStorage.getItem('siteLogo') || "ixl-favicon.png";
+
+            newTab.document.title = siteTitle;
+
+            const favicon = document.createElement('link');
+            favicon.rel = 'icon';
+            favicon.href = siteLogo;
+            newTab.document.head.appendChild(favicon);
+
+            const iframe = document.createElement('iframe');
+            iframe.src = '/ext/main.html';
+            iframe.style.width = '100vw';
+            iframe.style.height = '100vh';
+            iframe.style.border = 'none';
+            newTab.document.body.style.margin = '0';
+            newTab.document.body.appendChild(iframe);
+
+            const panicUrl = localStorage.getItem('panicUrl') || "https://google.com";
+            window.location.href = panicUrl;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!checkPassword()) {
+                alert('Incorrect password. Access denied.');
+                document.body.innerHTML = ''; // Clear the content if the password is incorrect
+            }
+        });
+    </script>
+</head>
+<body>
+    <button onclick="openNewTab()">Open Button menu</button>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXL | Dashboard</title>
+    <link rel="icon" href="ixl-favicon.png">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-container button {
+            display: block;
+            margin: 10px auto;
+        }
+        .update-date {
+            font-size: 14px;
+            color: gray;
+        }
+
+      footer {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button onclick="window.location.href='/ext/extog/'">OG EXT HANGER</button>
+        <div class="update-date">Last updated: Feb-11-2025</div>
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href='/ext/print/'">NEW PRINT HANGER</button>
+        <div class="update-date">Last updated: Mar-4-2025</div>
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href='/ext/data/'">DATA LINK GENERATOR</button>
+        <div class="update-date">Last updated: Apr-5-2024</div>
+    </div>
+    <footer>
+      <p>Turn on v8 to make ext hanger run better! <a href="chrome://settings/content/v8">V8 settings</a>
+      </p>
+    </footer>
+</html>
