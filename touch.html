@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch iframe work</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <iframe id="gameIframe" src=""></iframe>
+    <script>
+        // Extract query string for iframe URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetURL = urlParams.get('url'); // 'url' parameter in query string
+        const iframe = document.getElementById("gameIframe");
+
+        if (targetURL) {
+            iframe.src = targetURL;
+        } else {
+            document.body.innerHTML = "<h1>Error: No URL provided!</h1>";
+        }
+
+        // Enable touch screen compatibility
+        iframe.addEventListener("load", () => {
+            const iframeDocument = iframe.contentWindow.document;
+
+            // Handle touch inputs with simulated mouse events
+            iframe.contentWindow.addEventListener("touchstart", (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const mouseEvent = new MouseEvent("mousedown", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY,
+                    bubbles: true
+                });
+                iframeDocument.dispatchEvent(mouseEvent);
+            });
+
+            iframe.contentWindow.addEventListener("touchmove", (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const mouseEvent = new MouseEvent("mousemove", {
+                    clientX: touch.clientX,
+                    clientY: touch.clientY,
+                    bubbles: true
+                });
+                iframeDocument.dispatchEvent(mouseEvent);
+            });
+
+            iframe.contentWindow.addEventListener("touchend", (e) => {
+                e.preventDefault();
+                const mouseEvent = new MouseEvent("mouseup", {
+                    bubbles: true
+                });
+                iframeDocument.dispatchEvent(mouseEvent);
+            });
+        });
+    </script>
+</body>
+</html>

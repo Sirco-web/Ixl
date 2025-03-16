@@ -1,5 +1,10 @@
 Updates
 
+3.55 3/15/25
+
+Updated ext
+added touch.html *The html retrieves the target URL directly from a query parameter called url. For example: /index.html?url=https://example.com and make it no matter what touch screen compatible.
+
 3.53 and 3.54 2/28/25-3/1/25
 
 Removed download website feacher because did not work.
