@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ExtHang3r</title>
     <link rel="shortcut icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap">
     <style>
       body {
         font-family: 'Varela Round', sans-serif;
@@ -160,7 +160,7 @@
       <h1>ExtHang3r</h1>
     </header>
     <div class="container">
-      <p>ExtHang3r remains unpatched in all new ChromeOS versions as of March 2025.</p>
+      <p>Remains unpatched in all new ChromeOS versions as of February 2025.</p>
       <label for="iframeSelect" id="labelForIframeSelect">Select extension:</label>
       <select id="iframeSelect"></select>
       <label for="iframeCountSlider" id="labelForIframeSlider" style="margin-top: 20px;">The slider below changes the amount of iframes that will be created. Try it with the default first, and if the extension comes back after a few minutes increase it and try again. Tip: If your computer crashes or freezes for more than 2 minutes, you should definitely decrease the amount of iframes.</label>
@@ -180,7 +180,7 @@
         const slider = document.getElementById("iframeCountSlider");
         const sliderValueDisplay = document.getElementById("iframeCountValue");
         const deviceMemory = navigator.deviceMemory || 8; // It will be set to 8gb if you're in the data url, since navigator isnt supported.
-        const defaultIframeCount = Math.round(deviceMemory * 1500); // This changes the default value of the iframe slider based on how much memory your computer has
+        const defaultIframeCount = Math.round(deviceMemory * 500); // This changes the default value of the iframe slider based on how much memory your computer has
         const maxIframeCount = Math.round(deviceMemory * 10000);
         slider.value = defaultIframeCount;
         slider.max = maxIframeCount;
